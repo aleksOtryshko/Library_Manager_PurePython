@@ -21,11 +21,23 @@ class Book:
 
     @staticmethod
     def from_text(text):
-        """Создает объект книги из строки"""
-        parts = text.strip().split(",")
-        return Book(int(parts[0]), parts[1], parts[2], int(parts[3]), parts[4])
-
-
+    """Создает объект книги из строки"""
+        try:
+        # Разбиваем строку на части
+            parts = text.strip().split(",")
+        
+        # Проверяем, что частей ровно 5
+            if len(parts) != 5:
+                raise ValueError("Некорректный формат строки. Ожидалось 5 частей, разделенных запятыми.")
+        
+        # Преобразуем и возвращаем объект книги
+            return Book(int(parts[0]), parts[1], parts[2], int(parts[3]), parts[4])
+         except ValueError as e:
+             print(f"Ошибка: {e}")
+             return None
+         except IndexError:
+             print("Ошибка: Некорректный формат строки. Проверьте входные данные.")
+             return None
 # Класс для управления библиотекой
 class LibraryManager:
     def __init__(self, file_name):
