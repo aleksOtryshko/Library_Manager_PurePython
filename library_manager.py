@@ -202,8 +202,8 @@ class LibraryApp:
                 self.manager.change_status(book_id, "выдана")
             else:
                 print("Некорректный выбор статуса.")
-        except ValueError as e:
-            print(f"Ошибка: {e}")
+        except ValueError :
+            print(f"Ошибка: Введите ID цифрами!")
 
 
 # Запуск приложения
