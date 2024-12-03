@@ -21,7 +21,7 @@ class Book:
 
     @staticmethod
     def from_text(text):
-    """Создает объект книги из строки"""
+        """Создает объект книги из строки"""
         try:
         # Разбиваем строку на части
             parts = text.strip().split(",")
