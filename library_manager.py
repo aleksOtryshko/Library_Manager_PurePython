@@ -167,8 +167,8 @@ class LibraryApp:
             book_id = int(input("Введите ID книги для удаления: "))
             self.manager.delete_book(book_id)
             print("Книга успешно удалена!")
-        except ValueError as e:
-            print(f"Ошибка: {e}")
+        except ValueError :
+            print(f"Ошибка: Введите номер ID цифрами!")
 
     def _search_books(self):
         """Ищет книги"""
